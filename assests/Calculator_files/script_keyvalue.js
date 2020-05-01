@@ -362,31 +362,31 @@ var time = parseInt(e.getAttribute('data-time'));
 
     if(snackBar.style.display == "") {
         snackBar.style.display = "block";
-        snackBar.innerText = 'Tilføjet ' + name + ': ' + time + ' Dage.';
+        snackBar.innerText = 'Tilføjet ' + name + ': ' + time + ' Måneder.';
         setTimeout(hidePopup, 2500);
     }
     else if(snackBar.style.display == "none") {
         snackBar.style.display = "block";
-        snackBar.innerText = 'Tilføjet ' + name + ': ' + time + ' Dage.';
+        snackBar.innerText = 'Tilføjet ' + name + ': ' + time + ' Måneder.';
         setTimeout(hidePopup,2500);
     }
     else if(snackBar.style.display == "block" && snackBar.style.display != "none" && snackBar2.style.display != "block")
     {
         snackBar2.style.display = "block";
-        snackBar2.innerText = 'Tilføjet ' + name + ': ' + time + ' Dage.';
+        snackBar2.innerText = 'Tilføjet ' + name + ': ' + time + ' Måneder.';
         setTimeout(hidePopup2,2500);
 
     }
     else if(snackBar.style.display == "block" && snackBar2.style.display == "block" && snackBar3.style.display != "block")
     {
         snackBar3.style.display = "block";
-        snackBar3.innerText = 'Tilføjet ' + name + ': ' + time + ' Dage.';
+        snackBar3.innerText = 'Tilføjet ' + name + ': ' + time + ' Måneder.';
         setTimeout(hidePopup3,2500);
     }
     else if(snackBar.style.display == "block" && snackBar2.style.display == "block" && snackBar3.style.display == "block" && snackBar4.style.display != "block")
     {
         snackBar4.style.display = "block";
-        snackBar4.innerText = 'Tilføjet ' + name + ': ' + time + ' Dage.';
+        snackBar4.innerText = 'Tilføjet ' + name + ': ' + time + ' Måneder.';
         setTimeout(hidePopup4,2500);
 
     }
@@ -544,19 +544,19 @@ function updateChargeTable() {
     {
         if(totalTime >= 30 && totalTime < 60)
         	{
-        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" style="color:blue" data-html="true" data-toggle="tooltip" title="Lille straf</b>"></i></small></h2></div>';
+        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" style="color:blue" data-html="true" data-toggle="tooltip" title="Lille straf</b>"></i></small></h2></div>';
         	}
         	else if(totalTime >= 60 && totalTime < 90)
         	{
-        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" style="color:orange" data-html="true" data-toggle="tooltip" title="Mellem advarsel</b>"></i></small></h2></div>';
+        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" style="color:orange" data-html="true" data-toggle="tooltip" title="Mellem advarsel</b>"></i></small></h2></div>';
         	}
         	else if(totalTime >= 90)
         	{
-        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" style="color:red" data-html="true" data-toggle="tooltip" title="Stor Straf</b>"></i></small></h2></div>';
+        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" style="color:red" data-html="true" data-toggle="tooltip" title="Stor Straf</b>"></i></small></h2></div>';
         	}
         	else
         	{
-        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage</small></h2></div>';
+        		chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder</small></h2></div>';
         	}
             chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalFine + ' DKK</h2></div>';
     }
@@ -565,19 +565,19 @@ function updateChargeTable() {
         chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalFine + ' DKK</h2></div>';
         if(totalTime >= 30 && totalTime < 60)
             {
-                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" data-toggle="tooltip" style="color:blue" data-html="true" title="Lille straf</b>"></i></small></h2></div>';
+                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" data-toggle="tooltip" style="color:blue" data-html="true" title="Lille straf</b>"></i></small></h2></div>';
             }
             else if(totalTime >= 60 && totalTime < 90)
             {
-                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" data-toggle="tooltip" style="color:orange" data-html="true" title="Mellem Straf</b>"></i></small></h2></div>';
+                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" data-toggle="tooltip" style="color:orange" data-html="true" title="Mellem Straf</b>"></i></small></h2></div>';
             }
             else if(totalTime >= 90)
             {
-                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage <i class="material-icons" data-toggle="tooltip" style="color:red" data-html="true" title="Stor Straf</b>"></i></small></h2></div>';
+                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder <i class="material-icons" data-toggle="tooltip" style="color:red" data-html="true" title="Stor Straf</b>"></i></small></h2></div>';
             }
             else
             {
-                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Dage</small></h2></div>';
+                chargeTable += '<div class="col-lg-6 text-center"><h2 class="well">' + totalTime + ' <small>Måneder</small></h2></div>';
             }
 
         $(function ()
