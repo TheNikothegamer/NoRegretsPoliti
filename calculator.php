@@ -35,7 +35,7 @@ $sql = "SELECT * FROM bøder";
         type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Calulator files -->
+    <!-- Calculator files -->
     <script src="assests/Calculator_files/jquery.min.js"></script>
     <script src="assests/Calculator_files/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
@@ -46,9 +46,20 @@ $sql = "SELECT * FROM bøder";
     <script src="assests/Calculator_files/script_keyvalue.js"></script>
     <script src="assests/Calculator_files/search.js"></script>
     <!-- <script src="Calculator_files/script_loadtable.js"></script> -->
+
+    <!-- Preloader -->
+    <link rel="stylesheet" href="assests/css/style.css">
+    <script src="assests/js/preloader.js"></script>
 </head>
 
 <body>
+    <div class="loader">
+        <div class="image">
+            <i class="fas fa-codepen"></i>
+        </div>
+        <span></span>
+    </div>
+    <div class="content">
     <?php include "lib/nav.php" ?>
     <div class="container">
         <div class="row">
@@ -69,24 +80,6 @@ $sql = "SELECT * FROM bøder";
                             echo "<table class='table table-striped table-dark'>";
                             echo "<tbody id='fineTable'>";
                             while ($row = mysqli_fetch_array($result)) {
-                                /* // echo "<div class='col-lg-4 col-md-6 mb-4'>";
-                                echo "<div class='col-lg-4 col-md-6 mb-4'>";
-                                if ($row["kategori"] == "felony") {
-                                    echo "<div class='card text-white bg-info mb-3'>";
-                                }
-                                elseif ($row["kategori"] == "judge") {
-                                    echo "<div class='card text-white bg-dark mb-3'>";
-                                }
-                                elseif ($row["kategori"] == "misdemeanor") {
-                                    echo "<div class='card text-white bg-warning mb-3'>";
-                                }
-                                echo "<div class='card-header'></div>";
-                                echo "<div class='card-body'>";
-                                echo "<p class='card-text' style='color:white'>".$row["beskrivelse"]."</p>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</div>";
-                                //echo "</div>"; */
                                 echo "<tr>";
                                 echo "<td><a style='color:white;' href='javascript:void(0);' data-toggle='tooltip' data-name='".$row["navn"]."' data-time='".$row["tid"]."' data-fine='".$row["bøde"]."' onclick='addCharge(this)' title='".$row["beskrivelse"]."'>".$row["navn"]."</a></td>";
                                 echo "<td>".$row["tid"]."</td>";
@@ -142,6 +135,8 @@ $sql = "SELECT * FROM bøder";
             })
         })
     </script>
+    </div>
+    </div>
 </body>
 
 </html>

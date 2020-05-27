@@ -43,6 +43,10 @@ if ($result->num_rows > 0) {
 </head>
 
 <body>
+    <div class="lights-container">
+        <div class="redlight"></div>
+        <div class="bluelight"></div>
+    </div>
     <?php include "lib/nav.php" ?>
     <section class="page-section">
         <div class="container">
@@ -68,7 +72,7 @@ if ($result->num_rows > 0) {
                             echo "<td>" . $row["cprnr"] . "</td>";
                             echo "<td>" . $row["created_at"] . "</td>";
                             echo "<td>";
-                            echo "<button type='button' class='actions btn btn-primary' data-toggle='modal' data-target='#showModal'>Vis</button>";
+                            echo "<a href='viewReport.php?id=". $row["id"] ."' class='btn btn-primary'>Vis</a>";
                             echo "<a href='editReport.php?id=". $row["id"] ."' class='btn btn-warning'>Rediger</a>";
                             if($_SESSION["role"] == "Admin") {
                                 echo "<a href='deleteReport.php? id=". $row['id'] . "' class='btn btn-danger'>Slet</a>";
@@ -85,52 +89,6 @@ if ($result->num_rows > 0) {
             <a href="createReport.php" class="btn btn-success pull-right">Opret sag</a>
         </div>
     </section>
-
-    <!-- Vis sag modal -->
-    <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="showModalLabel"><?php echo "$name - $cpr"?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="chargesInput">Sigtelser</label>
-                            <input type="text" class="form-control" id="chargesInput" placeholder="Sigtelser"
-                                value="<?php echo $charges?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="penaltyInput">Straf</label>
-                            <input type="text" class="form-control" id="penaltyInput" placeholder="Straf"
-                                value="<?php echo $penalty?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="seizedInput">Beslaglagte ting</label>
-                            <input type="text" class="form-control" id="seizedInput" placeholder="Beslaglagte ting"
-                                value="<?php echo $seized?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="incidentTextarea">Hændelse</label>
-                            <textarea class="form-control" id="incidentTextarea" rows="3"
-                                readonly><?php echo $incident?></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="recognizingInput">Erkender</label>
-                            <input type="text" class="form-control" id="recognizingInput" placeholder="Erkender" value="<?php echo $recognizing?>" readonly>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <?php include "lib/footer.php" ?>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -142,6 +100,7 @@ if ($result->num_rows > 0) {
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="assests/js/search.js"></script>
+    <script src="assests/js/preloader.js"></script>
 </body>
 
 </html>
